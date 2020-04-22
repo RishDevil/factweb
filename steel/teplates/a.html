@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% extends 'base.html'%}
+</head>
+
+
+<body>
+
+{% block content%}
+<ol>
+   {% for p in object_list %}
+<li>
+    <p>{{p.vote}}<a href={{p.get_absolute_linkdetail}}>  {{p.title}}</a></p>
+    <a href={{p.get_absolute_voteurl}}>vote</a>
+
+</li>
+
+    {% endfor %}
+</ol>
+
+
+{% endblock %}
+</body>
+</html>
