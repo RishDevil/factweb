@@ -10,6 +10,9 @@
 <body>
 
 {% block content%}
+{% if is_paginated %}
+
+
 <ol>
    {% for p in object_list %}
 <li>
@@ -20,6 +23,21 @@
 
     {% endfor %}
 </ol>
+Page {{ page_obj.number }} of {{ paginator.num_pages }}
+{% if page_obj.has_previous %}
+
+      <a href="?page={{page_obj.previous_page_number}}">prev</a>
+    {% endif %}
+
+
+
+{% if page_obj.has_next %}
+    {% if page_obj.next_page_number != paginator.num_pages %}
+      <a href="?page={{page_obj.next_page_number}}">Next</a>
+    {% endif %}
+    <a href="?page={{paginator.num_pages}}">Last</a>
+  {% endif %}
+{% endif %}
 
 
 {% endblock %}

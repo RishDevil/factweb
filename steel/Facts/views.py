@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView,CreateView
-from django.views.generic.edit import  UpdateView
+from django.views.generic.edit import  UpdateView,ModelFormMixin
 from .forms import UserForm,LinkForm
 from django.urls import reverse
 from django.contrib.auth import get_user_model
+
 
 from .models import Link,Voters,UserProfile
 from django.shortcuts import render,redirect
@@ -11,6 +12,7 @@ from django.shortcuts import render,redirect
 class List(ListView):
     model=Link
     template_name = 'a.html'
+    paginate_by = 2
     queryset = Link.with_votes.all()
 
 def createVote(request,slug):
@@ -52,4 +54,9 @@ class LinkCreate(CreateView):
     template_name = "create.html"
     def get_success_url(self):
         return reverse('fact')
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.submitter = self.request.user
+        self.object.save()
+        return super(ModelFormMixin, self).form_valid(form)
 
