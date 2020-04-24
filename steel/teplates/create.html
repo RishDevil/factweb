@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+     {% extends 'frame.html'%}
 </head>
+{% block main %}
 <table>
+
 <form method="post" action="{% url 'create' %}">
     {% csrf_token%}
-<table>
-    <tr>
-        <th colspan="4">
-            {{form.title.label_tag}}</th><th> {{form.title}}</th><th> {{form.errors.title}}</th> <br><br>
+<table width="50%">
+    <tr height="100">
+        <th width="50%">
+            {{form.title.label_tag}}</th><th width="50%"> {{form.title}}</th><th width="50%"> {{form.errors.title}}</th> <br><br>
     </th>
-        <tr>
-    <th colspan="4">
-    {{form.description.label_tag}}</th><th> {{form.description}}</th>
+        <tr height="100">
+    <th width="50%">
+    {{form.description.label_tag}}</th><th width="50%"> {{form.description}}</th>
 </tr>
-    <tr><th>
+    <tr height="100"><th width="50%">
         <input type="submit" value="create"></th></form>
 </table>
-
+{% endblock %}
 </body>
 </html>

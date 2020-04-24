@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% extends 'frame.html'%}
 </head>
 <body>
+{% block main %}
 {% block content %}
 
 {% endblock %}
+
+User:
 <a href={% url 'user' slug=user.username%}>{{user.username}}</a>
+
+{% endblock %}
 </body>
 </html>

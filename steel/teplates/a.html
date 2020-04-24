@@ -23,7 +23,7 @@
 
     {% endfor %}
 </ol>
-Page {{ page_obj.number }} of {{ paginator.num_pages }}
+
 {% if page_obj.has_previous %}
 
       <a href="?page={{page_obj.previous_page_number}}">prev</a>
@@ -38,8 +38,9 @@ Page {{ page_obj.number }} of {{ paginator.num_pages }}
     <a href="?page={{paginator.num_pages}}">Last</a>
   {% endif %}
 {% endif %}
-
-
+<br>
+Page {{ page_obj.number }} of {{ paginator.num_pages }}<br>
+<br>
 {% endblock %}
 </body>
 </html>

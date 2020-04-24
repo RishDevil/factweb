@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+     {% extends 'frame.html'%}
 </head>
 <body>
-{{object.username}}
-{{object.userprofile.bio}}
+{% block main %}
 
-<a href={% url 'profileedit' %}>eit bio</a>   <a href={% url 'create' %}>create post</a>
+<table width="50%">
+    <tr height="50">
+        <th width="20%" >
+           Username: </th><th width="80%"> {{object.username}}</th> <br><br>
+    </tr>
+        <tr height="50">
+    <th width="20%">
+   Description:</th><th width="20%">{{object.userprofile.bio}} </th>
+</tr>
+
+</table><br><br>
+<table width="40%">
+    <tr height="50">
+        <th width="50%" ><a href={% url 'profileedit' %}>eit bio</a>
+           </th><th width="50%"> <a href={% url 'create' %}>create post</a></th> <br><br>
+    </tr>
+
+
+</table>
+{% endblock %}
 </body>
 </html>
