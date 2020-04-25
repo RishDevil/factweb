@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    {% extends 'frame.html'%}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+  .container {
+    padding: 80px 120px;
+  }</style>
 </head>
 <body>
-{% block main %}
+<div class="container text-center">
 {% block content %}
 
 {% endblock %}
 
 User:
 <a href={% url 'user' slug=user.username%}>{{user.username}}</a>
+</div>
 
-{% endblock %}
 </body>
 </html>

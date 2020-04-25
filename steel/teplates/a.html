@@ -3,44 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    {% extends 'base.html'%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+
+
+{% extends 'base.html' %}
 </head>
 
 
 <body>
-
-{% block content%}
+{% block content %}
 {% if is_paginated %}
 
 
-<ol>
    {% for p in object_list %}
-<li>
-    <p>{{p.vote}}<a href={{p.get_absolute_linkdetail}}>  {{p.title}}</a></p>
-    <a href={{p.get_absolute_voteurl}}>vote</a>
-
-</li>
+<div class="row">
+    <div class="col-sm-8" style="background-color:yellow;">
+        <a href={{p.get_absolute_linkdetail}}>  {{p.title|truncatechars:100 }}</a></div>
+    <div class="col-sm-2" style="background-color:yellow;">{{p.vote}}</div> <div class="col-sm-2" style="background-color:yellow;"> <a href={{p.get_absolute_voteurl}}>vote</a>
+</div></div>
 
     {% endfor %}
-</ol>
 
+<div class="row">
+    <div class="col-sm-4" >
 {% if page_obj.has_previous %}
 
-      <a href="?page={{page_obj.previous_page_number}}">prev</a>
-    {% endif %}
-
+         <a href="?page={{page_obj.previous_page_number}}">prev</a>
+        {% endif %}</div>
+<div class="col-sm-4" >
 
 
 {% if page_obj.has_next %}
     {% if page_obj.next_page_number != paginator.num_pages %}
-      <a href="?page={{page_obj.next_page_number}}">Next</a>
-    {% endif %}
-    <a href="?page={{paginator.num_pages}}">Last</a>
+        <a href="?page={{page_obj.next_page_number}}">Next</a>
+    {% endif %}</div><div class="col-sm-4" >
+         <a href="?page={{paginator.num_pages}}">Last</a>
   {% endif %}
-{% endif %}
-<br>
-Page {{ page_obj.number }} of {{ paginator.num_pages }}<br>
-<br>
+    {% endif %}</div></div>
+<div class="row">
+    <div class="col-sm-12" >
+    Page {{ page_obj.number }} of {{ paginator.num_pages }}
+
+    </div>
+
 {% endblock %}
 </body>
 </html>

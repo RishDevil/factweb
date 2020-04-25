@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+  .container {
+    padding: 80px 120px;
+  }</style>
 </head>
 <body>
-{{object.title}}
+<div class="container text-center">
+
+        {{object.title}}</div></div><br>
+<div class="row">
+    <div class="col-sm-12" style="background-color:yellow;">
+    <div class="row">
+    <div class="col-sm-12" style="background-color:yellow;">
+        {{object.description}}</div></div><br>
+        <div class="row">
+    <div class="col-sm-12" style="background-color:yellow;">
+        -{{object.submitter}}</div></div><br>
+            <div class="row">
+    <div class="col-sm-12" style="background-color:yellow;">
+        <a href={{object.get_absolute_voteurl}}>vote</a></div></div>
+</div>
 </body>
 </html>

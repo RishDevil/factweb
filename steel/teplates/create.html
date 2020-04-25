@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-     {% extends 'frame.html'%}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+  .container {
+    padding: 80px 120px;
+  }</style>
 </head>
-{% block main %}
-<table>
+<body>
+<div class="container text-center">
 
 <form method="post" action="{% url 'create' %}">
     {% csrf_token%}
-<table width="50%">
-    <tr height="100">
-        <th width="50%">
-            {{form.title.label_tag}}</th><th width="50%"> {{form.title}}</th><th width="50%"> {{form.errors.title}}</th> <br><br>
-    </th>
-        <tr height="100">
-    <th width="50%">
-    {{form.description.label_tag}}</th><th width="50%"> {{form.description}}</th>
-</tr>
-    <tr height="100"><th width="50%">
-        <input type="submit" value="create"></th></form>
-</table>
-{% endblock %}
+
+<div class="row">
+    <div class="col-sm-4" style="background-color:yellow;">
+        {{form.title.label_tag}}</div><div class="col-sm-4" style="background-color:yellow;"> </div><div class="col-sm-4" style="background-color:yellow;"> {{form.errors.title}}</div></div>
+<br><br>
+<div class="row">
+    <div class="col-sm-4" style="background-color:yellow;">
+        {{form.description.label_tag}}</div> <div class="col-sm-4" style="background-color:yellow;">{{form.description}}</div></div><br><br>
+<div class="row">
+    <div class="col-sm-12" style="background-color:yellow;">
+        <input type="submit" value="create"></div></div></form>
+
+</div>
 </body>
 </html>

@@ -12,7 +12,7 @@ from django.shortcuts import render,redirect
 class List(ListView):
     model=Link
     template_name = 'a.html'
-    paginate_by = 2
+    paginate_by = 5
     queryset = Link.with_votes.all()
 
 def createVote(request,slug):

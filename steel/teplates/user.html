@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <title>Title</title>
-     {% extends 'frame.html'%}
+     {% extends 'base.html'%}
+
+
+
 </head>
 <body>
-{% block main %}
+{% block content %}
 
-<table width="50%">
-    <tr height="50">
-        <th width="20%" >
-           Username: </th><th width="80%"> {{object.username}}</th> <br><br>
-    </tr>
-        <tr height="50">
-    <th width="20%">
-   Description:</th><th width="20%">{{object.userprofile.bio}} </th>
-</tr>
-
-</table><br><br>
-<table width="40%">
-    <tr height="50">
-        <th width="50%" ><a href={% url 'profileedit' %}>eit bio</a>
-           </th><th width="50%"> <a href={% url 'create' %}>create post</a></th> <br><br>
-    </tr>
-
-
-</table>
+<div class="row">
+    <div class="col-sm-4" style="background-color:yellow;">
+        Username:</div> <div class="col-sm-8" style="background-color:yellow;">{{object.username}}</div><br><br>
+    <div class="col-sm-4" style="background-color:yellow;">Description: </div><div class="col-sm-8" style="background-color:yellow;">{{object.userprofile.bio}}</div></div>
+<br><br>
+<div class="row">
+    <div class="col-sm-4" style="background-color:yellow;">
+        <a href={% url 'profileedit' %}>eit bio</a></div> <div class="col-sm-8" style="background-color:yellow;">
+    <a href={% url 'create' %}>create post</a></div></div>
 {% endblock %}
 </body>
 </html>

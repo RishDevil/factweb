@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-     {% extends 'frame.html'%}
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+  .container {
+    padding: 80px 120px;
+  }</style>
 </head>
 <body>
-{% block main %}
+<div class="container text-center">
+
 <form method="post" >
     {% csrf_token%}
-{{form.as_p}}
-    <input type="submit" value="edit"/>
+
+<div class="row">
+    <div class="col-sm-12" style="background-color:yellow;">
+{{form.bio.label_tag}}
+    </div></div>
+<div class="row">
+    <div class="col-sm-12" style="background-color:yellow;">
+        {{form.bio}}</div></div>
+<div class="row">
+    <div class="col-sm-12" style="background-color:yellow;">
+        <input type="submit" value="edit"/></div></div>
 </form>
 
-{% endblock %}
-
+</div>
 </body>
 </html>

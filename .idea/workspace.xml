@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e623009-3e55-4121-9068-f80b7e186476" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steel/Facts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/steel/Facts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/steel/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/steel/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/steel/teplates/a.html" beforeDir="false" afterPath="$PROJECT_DIR$/steel/teplates/a.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/steel/teplates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/steel/teplates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/steel/teplates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/steel/teplates/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steel/teplates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/steel/teplates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steel/teplates/frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/steel/teplates/frame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/steel/teplates/upateuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/steel/teplates/upateuser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/steel/teplates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/steel/teplates/user.html" afterDir="false" />
     </list>
